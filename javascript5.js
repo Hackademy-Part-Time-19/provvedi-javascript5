@@ -1,8 +1,49 @@
+
+function rimuoviElementoArray(lista, elemento) {
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i] == elemento) {
+            lista.splice(i,1);
+        }
+    }
+    return lista;
+}
+
+
+function ModificaElementoArray(lista, elementoArray, nuovoElemento) {
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i] == elementoArray) {
+            lista[i] = nuovoElemento;
+        }
+    }
+    return lista;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alert("Buongiorno,qui potrai aggiornare la tua lista di componenti assemblaggio del pc")
 
 let inizio
 
-let listacomponenti=["processore,schede ram,memoria SSD,hard disk,case,scheda madre,dissipatore ad aria,dissipatore liquido,scheda grafica,alimentatore,monitor,mouse,tastiera,cuffie,casse audio" ]
+let listacomponenti=["processore","schede ram","memoria SSD","hard disk","case","scheda madre","dissipatore ad aria","dissipatore liquido","scheda grafica","alimentatore","monitor","mouse","tastiera","cuffie","casse audio" ]
 
 while(inizio !=0){
     
@@ -19,44 +60,39 @@ while(inizio !=0){
         break;
 
 
-        case 2: let eliminazioneelemento=prompt("cosa desideri eliminare?")
-
+        case 2: 
+                    let prodottoDaRimuovere = prompt("Inserisci l'elemento che vuoi rimuovere dalla lista componenti:");
+            listacomponenti = rimuoviElementoArray(listacomponenti, prodottoDaRimuovere);
+            alert("Elemento rimosso")
+            alert("Ecco la tua lista aggiornata: " + listacomponenti);
+            break;
         
-       
-        alert("adesso la tua lista è"+" "+listacomponenti)
-
-        break;
-
-
-        case 3: let comparazione= function (){
+                
             
-            let nome1=prodotto1.nome.toLowercase()
-            let nome2=prodotto2.nome.toLowercase()
 
-            if(nome1<nome2){
-                return -1;
-            } else if(nome1>nome2){
-                return 1;
-            }else{
-                return 0
-            }
+            
+           
+        
+            
+        
+      
 
-            }
-            let ordinamentoalfabetico=listacomponenti.sort(comparazione)
 
-                
+        case 3: listacomponenti.sort();
+        alert(listacomponenti)
+
+            
+       
         
-        
-                
-        alert("ecco la tua lista in ordine alfabetico"+" "+ordinamentoalfabetico)
-        
+         break;
 
         
-
+        case 4: let prodottoDaModificare = prompt("Inserisci il prodotto da sostituire:");
+        let prodottoDaAggiornare = prompt("Inserisci il nuovo prodotto:");
+        listacomponenti = ModificaElementoArray(listacomponenti, prodottoDaModificare, prodottoDaAggiornare);
+        alert("La tua lista è stata aggiornata con successo!")
+        alert("Ecco la tua lista aggiornata: " + listacomponenti);
         break;
-
-        
-        case 4: let modificaelemento=prompt("cosa desideri modificare?")
         
 
 
@@ -64,7 +100,7 @@ while(inizio !=0){
 
 
 
-        break;
+        
 
         
        case 5: listacomponenti.length=0
@@ -78,7 +114,7 @@ while(inizio !=0){
         case 6: alert("ecco la tua lista"+" "+ listacomponenti)
            
 
-
+    }
         
         
 
@@ -90,7 +126,7 @@ while(inizio !=0){
         
         
         
-    }
+    
 }
 
 console.log(listacomponenti)
