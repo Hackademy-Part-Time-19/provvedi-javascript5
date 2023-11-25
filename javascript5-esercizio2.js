@@ -12,6 +12,3 @@ function filtranumeri(numeri){
 
 let filtro= filtranumeri(numeri)
 console.log(filtro)
-
-
-
